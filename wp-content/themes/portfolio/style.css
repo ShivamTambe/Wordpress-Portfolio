@@ -1,0 +1,514 @@
+/*
+    Theme Name:Portfolio
+    Description:Developing Portfolio Theme for learning Purpose
+    Authour:Shivam Tambe
+*/
+
+
+
+/* NAVBAR */
+
+body {
+    font-family: Thicccboi, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navtitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-item a {
+    text-decoration: none;
+}
+
+#menu-header {
+    list-style-type: none;
+}
+
+#menu-header li {
+    margin-left: 10px;
+}
+
+.nav-btns {
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 35px;
+}
+
+/* HEAD MINE */
+
+.Section {
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.Section-top {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.Section-content span {
+    border-bottom: 5px solid #000;
+}
+
+.Section-content h1 {
+    color: var(--neutral-800);
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 70px;
+}
+
+
+
+.paragraph-large {
+    font-size: 22px;
+    line-height: 36px;
+    color: #686868;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #dfdfdf;
+}
+
+/* PROJECT CSS */
+
+.Section-pro {
+    padding-top: 160px;
+    padding-bottom: 160px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.Pro-cards {
+    display: flex;
+    border: 1px solid #dfdfdf;
+    align-items: center;
+    height: 600px;
+    margin-bottom: 40px;
+}
+
+.Pro-cards-left {
+    width: 40%;
+}
+
+.Section-pro-top {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 64px;
+}
+
+.Pro-cards-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 40px;
+    align-items: flex-start;
+}
+
+.card-top {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.card-middle {
+    width: 20px;
+    height: 1px;
+    background-color: black;
+}
+
+.card-top div {
+    margin-right: 10px;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+}
+
+.card-dis {
+    margin-bottom: 48px;
+    text-align: justify;
+}
+
+.card-go {
+    text-decoration: underline;
+}
+
+.Pro-cards-right {
+    background-color: pink;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.Pro-cards-right img {
+    height: 100%;
+    width: 100%;
+    max-width: 632px;
+}
+
+@keyframes sliding {
+    0% {
+        width: 44vw;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.animate {
+    animation-name: sliding;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 600ms;
+}
+
+.slide {
+    background-color: black;
+    z-index: 2;
+    width: 44vw;
+    height: 600px;
+    position: absolute;
+    left: 45%;
+}
+
+@keyframes leftsliding {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.left-animate {
+    opacity: 0;
+    animation-name: leftsliding;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 100ms;
+}
+
+.pro{
+    width: 50%;
+    padding: 32px 40px;
+}
+
+   /* ABOUT PAGE */
+
+.abouttop{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    height: 500px;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+.aboutsum{
+    display: flex;
+    justify-content: space-between;
+}
+.about_image{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 300px;
+}
+.about_content{
+    display: flex;
+    flex-direction: column;
+    padding: 32px 40px;
+    padding-right: 0;
+}
+.about_image img{
+    height: 100%;
+}
+.a_title{
+    font-size:70px;
+    line-height: 70px;
+}
+.about_content{
+    width: 50%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    justify-content: center;
+}
+.a_more{
+    text-align: end;
+}
+
+
+    /* ABOUT SEC */
+
+.aboutsec{
+    width: 80%;
+    margin: 0 auto;
+}
+.a_sec_content{
+    display: flex;
+    flex-direction: column;
+    padding: 160px 0;
+    gap: 20px;
+}
+.a_sec_top{
+    display: flex;
+}
+.a_sec_tr img{
+    width: 340px;
+    justify-self: end;
+    align-self: flex-end;
+    margin-right: 56px;
+}
+.a_sec_btm{
+    display: flex;
+}
+.a_sec_bl,.a_sec_br{
+    width: 50%;
+    align-self: center;
+    justify-content: end;
+}
+.a_sec_bl img{
+    width: 498px;
+    justify-self: end;
+
+}
+.a_sec_br{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+.a_sec_br img{
+    justify-self: end;
+    width: 216px;
+}
+.a_sec_bl{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    left: 15%;
+}
+.tl_title{
+    margin-bottom: 16px;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 64px;
+}
+.a_sec_tl{
+    width: 50%;
+}
+.a_sec_tr{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.tl_dis{
+    font-size: 22px;
+    line-height: 36px;
+}
+.line{
+    width: 100%;
+    background-color: gray;
+    height: 1px;
+}
+
+
+        /* EXPERIENCE CSS */
+.experience{
+    width: 80%;
+    margin: 0 auto;
+    padding: 160px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+.exp_title{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 64px;
+}
+.expl{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 320px;
+    position: sticky;
+    top: 40px;
+}
+.resume_link{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 26px;
+}
+.exp_right{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.exp_right{
+    width: 50%;
+}
+.exp_rl img{
+    width: 100px;
+}
+.exp_rr{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.exp_rr_t span{
+    margin: 0 5px;
+    color: gray;
+    font-family: Thicccboi, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+}
+.exp_rr_m{
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+}
+.exp_span_line{
+    height: 1px;
+    display: block;
+    width: 40px !important;
+    background-color: gray;
+}
+.exp_rr_t{
+    display: flex;
+    align-items: center;
+}
+.exp_span_d{
+    margin-left: 0 !important;
+}
+.expl{
+    width: 40%;
+}
+.exp_mul{
+    display: flex;
+    gap: 10px;
+    border-top: 1.5px solid gray;
+    padding: 44px 0;
+}
+
+
+    /* SKILLS SECTION */
+
+.work_style{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+}
+.skills_title{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 64px;
+    max-width: 550px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 48px;
+}
+.skills_sec{
+    padding: 160px 0;
+}
+.skills{
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 72px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 65px;
+}
+.skill img{
+    width: 145px;
+    height: 100px;
+    margin-bottom: 32px;
+}
+.skill_title{
+    margin-bottom: 16px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+}
+.skill_dis{
+    color: grey;
+    text-align: center;
+}
+.skill{
+    padding-bottom: 40px;
+    border-bottom: 1.5px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact_sec{
+    padding: 160px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.contact{
+    width: 80%;
+    margin: 0 auto;
+}
+.contact_title{
+    display: flex;
+    flex-direction: column;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 64px;
+    margin-bottom: 16px;
+}
+.underline{
+    text-decoration: underline;
+}
+.contact_sub_sec{
+    width: 70%;
+}
+.contact_more{
+    display: flex;
+    align-items: end;
+    justify-self: end;
+}
+.foot{
+    margin: 20px auto;
+    text-align: center;
+}
