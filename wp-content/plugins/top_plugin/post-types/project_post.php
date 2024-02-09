@@ -53,6 +53,14 @@ add_action('init', 'register_project_post_type');
 function custom_project_post_meta_boxes()
 {
     add_meta_box(
+        'background_image_meta_box',
+        'Background Image',
+        'display_background_image_meta_box',
+        'project',
+        'side',
+        'default'
+    );
+    add_meta_box(
         'client_name_meta_box',
         'Client Name',
         'display_client_name_meta_box',
@@ -68,6 +76,14 @@ function custom_project_post_meta_boxes()
         'side',
         'default'
     );
+}
+function display_background_image_meta_box($post)
+{
+    $background_image = get_post_meta($post->ID, 'background_image', true);
+?>
+    <label for="background_image">BackGround Image: <?php $background_image ?></label>
+    <input type="file" id="background_image" name="background_image" accept="image/*" > 
+<?php
 }
 function display_client_name_meta_box($post)
 {
@@ -94,7 +110,7 @@ function save_project_post_meta_data($post_id, $post, $update)
         return;
     }
     if ($post->post_type == 'project') {
-        $fields = array('client_name', 'work');
+        $fields = array('client_name', 'work','background_image');
         foreach ($fields as $field) {
             if (isset($_POST[$field])) {
                 $field_value = sanitize_text_field($_POST[$field]);

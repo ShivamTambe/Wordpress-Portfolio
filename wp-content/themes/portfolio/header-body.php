@@ -25,7 +25,7 @@
           <p class='card-dis'>
             <?php echo get_the_excerpt($project->ID); ?>
           <div class='card-go'>
-            <span>View Project</span>
+            <span><a href="<?php the_permalink($project->ID)?>">View Project</a></span>
             <span> Arrow</span>
           </div>
         </div>

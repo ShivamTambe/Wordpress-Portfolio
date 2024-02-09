@@ -803,3 +803,17 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.svg{
+    cursor: pointer;
+}
+.foot_r_t{
+    margin-bottom: 26px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.foot_r_page{
+    font-size: 18px;
+    line-height: 20px;
+    text-decoration: none;
+    transition: color .35s;
+}

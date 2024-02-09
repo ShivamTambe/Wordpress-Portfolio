@@ -8,9 +8,9 @@ get_header('project');
 <div class="project_top_sec">
     <div class="contact_sec">
         <div class="contact_sub_sec project_sec">
-            <div class="contact_title">Brand design & identity for Sezane
+            <div class="contact_title"><?php the_title() ?>
             </div>
-            <div class="contact_dis">Lorem ipsum dolor sit amet consectetur adipiscing elit nulla arcu porttitor molestie sed mauris sollicitudin id ornare egestas.</div>
+            <div class="contact_dis"><?php the_content() ?></div>
         </div>
         <div class="contact_more">More</div>
     </div>
