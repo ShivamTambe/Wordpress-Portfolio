@@ -135,8 +135,8 @@ function display_my_dis_meta_box($post)
 {
     $my_dis = get_post_meta($post->ID, 'my_dis', true);
 ?>
-    <label for="my_dis">End Text:</label>
-    <textarea type="text" name="my_dis" value="<?php echo esc_attr($my_dis); ?>" ></textarea>
+    <label for="my_dis">Discription:</label>
+    <textarea type="text" name="my_dis" value="<?php echo esc_attr($my_dis); ?>" ><?php echo esc_attr($my_dis); ?></textarea>
 <?php
 }
 

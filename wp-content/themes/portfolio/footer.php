@@ -1,21 +1,18 @@
 <div class="footer">
     <div class="line"></div>
     <div class="foot">
-        <div class="foot_left">
-            <div class="foot_h">Portfolio</div>
-            <div class="foot_dis">Lorem ipsum dolor sit amet tis qui rerum quaerat aspernatur ipsam doloribus iste enim totam illo odio.</div>
-            <div class="foot_email">
-                <input type="text" placeholder="Email">
-                <button>Subscribe</button>
-            </div>
-        </div>
+        <?php get_header('email');?>
         <div class="foot_right">
             <div class="foot_r_t">Pages</div>
-            <div class="foot_r_pages">
-                <div class="foot_r_page">Home</div>
-                <div class="foot_r_page">Home</div>
-                <div class="foot_r_page">Home</div>
-                <div class="foot_r_page">Home</div>
+            <div class="navbar">
+                <div class="header-content">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary-menu',
+                        'menu_class' => 'footer_tabs'
+                    ))
+                    ?>
+                </div>
             </div>
         </div>
     </div>

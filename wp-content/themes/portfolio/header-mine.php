@@ -1,16 +1,14 @@
 <div class='Section-top'>
     <div class="Section">
         <div class="Section-content">
-            <?php
-            $args = array(
+            <?php wp_head(); ?>
+            <?php $args = array(
                 'post_type'      => 'top_post',
                 'posts_per_page' => -1, // Set to -1 to retrieve all posts
-                'order'          => 'DESC',
             );
             $top_posts = get_posts($args);
-
             if ($top_posts) {
-                $post = $top_posts[0];
+                $post = $top_posts[2];
                 setup_postdata($post);
             ?>
                 <h1>I'm <?php echo esc_html(get_post_meta($post->ID, 'your_name', true)); ?>, and <?php echo esc_html(get_post_meta($post->ID, 'second_text', true)); ?><br></br>

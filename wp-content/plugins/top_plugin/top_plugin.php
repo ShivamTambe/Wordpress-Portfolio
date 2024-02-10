@@ -20,6 +20,8 @@
 
 require_once __DIR__ . '/post-types/top_post.php';
 require_once __DIR__ . '/post-types/project_post.php';
+require_once __DIR__ . '/post-types/experience.php';
+require_once __DIR__ . '/post-types/core_value.php';
 require_once __DIR__ . '/taxonomy/project_category.php';
 require_once __DIR__ . '/taxonomy/project_tag.php';
 

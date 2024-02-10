@@ -76,13 +76,30 @@ function custom_project_post_meta_boxes()
         'side',
         'default'
     );
+    add_meta_box(
+        'deliverables_meta_box',
+        'Deliverables',
+        'display_deliverables_meta_box',
+        'project',
+        'side',
+        'default'
+    );
+    add_meta_box(
+        'website_url_meta_box',
+        'Website Url',
+        'display_website_url_meta_box',
+        'project',
+        'side',
+        'default'
+    );
+    require_once __DIR__ . '/Project_extras/extra_meta_boxes.php';
 }
 function display_background_image_meta_box($post)
 {
     $background_image = get_post_meta($post->ID, 'background_image', true);
 ?>
-    <label for="background_image">BackGround Image: <?php $background_image ?></label>
-    <input type="file" id="background_image" name="background_image" accept="image/*" > 
+    <label for="background_image">BackGround Image: <?php echo $background_image ?></label>
+    <input type="file" id="background_image" name="background_image" accept="image/*">
 <?php
 }
 function display_client_name_meta_box($post)
@@ -101,6 +118,25 @@ function display_work_meta_box($post)
     <input type="text" name="work" value="<?php echo esc_attr($work); ?>" />
 <?php
 }
+
+function display_deliverables_meta_box($post)
+{
+    $deliverables = get_post_meta($post->ID, 'deliverables', true);
+?>
+    <label for="work">Deliverables:</label>
+    <input type="text" name="deliverables" value="<?php echo esc_attr($deliverables); ?>" />
+<?php
+}
+function display_website_url_meta_box($post)
+{
+    $website_url = get_post_meta($post->ID, 'website_url', true);
+?>
+    <label for="work">Website Url:</label>
+    <input type="text" name="website_url" value="<?php echo esc_attr($website_url); ?>" />
+<?php
+}
+require_once __DIR__ . '/Project_extras/display_meta.php';
+
 add_action('add_meta_boxes', 'custom_project_post_meta_boxes');
 
 function save_project_post_meta_data($post_id, $post, $update)
@@ -110,9 +146,21 @@ function save_project_post_meta_data($post_id, $post, $update)
         return;
     }
     if ($post->post_type == 'project') {
-        $fields = array('client_name', 'work','background_image');
-        foreach ($fields as $field) {
-            if (isset($_POST[$field])) {
+        $fields = array('client_name', 'work', 'background_image','deliverables','website_url');
+        foreach ($fields as $field){
+            error_log("first: " . $field);
+            if ($field == 'background_image') {
+                if (!isset($_FILES['background_image']['name']) || empty($_FILES['background_image']['name'])) {
+                    return;
+                }
+                $uploaded_file = wp_handle_upload($_FILES['background_image'], array('test_form' => false));
+
+                if (is_array($uploaded_file) && isset($uploaded_file['url'])) {
+                    $uploaded_image_url = $uploaded_file['url'];
+                    update_post_meta($post_id, $field, $uploaded_image_url);
+                }
+            } else if (isset($_POST[$field])) {
+                error_log("last: " . $field);
                 $field_value = sanitize_text_field($_POST[$field]);
                 update_post_meta($post_id, $field, $field_value);
             }

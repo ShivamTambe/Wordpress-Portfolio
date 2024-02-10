@@ -7,7 +7,6 @@
     $args = array(
       'post_type'      => 'project',
       'posts_per_page' => -1, // Set to -1 to retrieve all posts
-      'order'          => 'DESC',
     );
     $projects = get_posts($args);
 

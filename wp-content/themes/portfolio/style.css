@@ -497,6 +497,11 @@ body {
     line-height: 64px;
     margin-bottom: 16px;
 }
+.contact_title2{
+    display: flex;
+    font-size: 48px;
+    font-weight: 500;
+}
 .underline{
     text-decoration: underline;
 }
@@ -816,4 +821,14 @@ body {
     line-height: 20px;
     text-decoration: none;
     transition: color .35s;
+}
+
+    /* CONTACT CSS */
+
+.contact_div{
+    display: flex;
+    flex-direction: column;
+}
+.footer_tabs{
+    list-style: none;
 }
