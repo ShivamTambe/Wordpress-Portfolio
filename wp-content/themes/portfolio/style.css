@@ -50,7 +50,9 @@ body {
 }
 
 /* HEAD MINE */
-
+.underline-heading{
+    text-decoration: underline;
+}
 .Section {
     padding-top: 160px;
     padding-bottom: 160px;
@@ -61,9 +63,9 @@ body {
     margin: 0 auto;
 }
 
-.Section-content span {
+/* .Section-content span {
     border-bottom: 5px solid #000;
-}
+} */
 
 .Section-content h1 {
     color: var(--neutral-800);

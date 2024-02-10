@@ -146,7 +146,7 @@ function save_project_post_meta_data($post_id, $post, $update)
         return;
     }
     if ($post->post_type == 'project') {
-        $fields = array('client_name', 'work', 'background_image','deliverables','website_url');
+        $fields = array('client_name', 'work', 'background_image');
         foreach ($fields as $field){
             error_log("first: " . $field);
             if ($field == 'background_image') {

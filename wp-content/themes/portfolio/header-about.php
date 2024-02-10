@@ -1,24 +1,33 @@
+<?php $top_post = array(
+    'post_type'      => 'top_post',
+    'posts_per_page' => -1, // Set to -1 to retrieve all posts
+);
+$top_d = get_posts($top_post)[0]; ?>
 <div class="abouttop">
     <div class="aboutsum">
-        <div class="about_image"><img src="https://ongpng.com/wp-content/uploads/2023/08/kid-goku-fighting.png" alt=""></div>
+        <div class="about_image"><img src="<?php echo get_the_post_thumbnail_url($top_d->ID, 'thumbnail')?>" alt=""></div>
         <div class="about_content">
-            <div class="a_title">I'm Sam Moore, a designer based in Los Angeles, CA</div>
-            <div class="a_dis">Let the pain itself be amet consectetur adipiscing elit until the morbi lectus, unless it is necessary to proin amet rhoncus crime lorem feugiat amet this ornar morbi lectus.</div>
+            <div class="a_title"><?php echo get_post_meta($top_d->ID, 'your_name', true) ?></div>
+            <div class="a_dis"><?php echo get_post_meta($top_d->ID, 'my_dis', true) ?></div>
         </div>
     </div>
     <div class="a_more">MORE</div>
 </div>
-
+<?php $about = array(
+    'post_type'      => 'about',
+    'posts_per_page' => -1, // Set to -1 to retrieve all posts
+);
+$about_details = get_posts($about)[0]; ?>
 <div class="aboutsec">
     <div class="line"></div>
     <div class="a_sec_content">
         <div class="a_sec_top">
             <div class="a_sec_tl">
-                <h2 class="tl_title">About me</h2>
-                <p class="tl_dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatem facere tempora praesentium debitis magnam recusandae, consectetur laudantium, nulla porro nostrum? Natus laudantium quo aperiam culpa ea molestiae architecto at.</p>
+                <h2 class="tl_title"><?php echo esc_html(get_the_title($about_details)) ?></h2>
+                <p class="tl_dis"><?php echo apply_filters('the_content', $about_details->post_content); ?></p>
             </div>
             <div class="a_sec_tr">
-                <img src="https://i.pinimg.com/736x/fc/2d/50/fc2d508767c4c7e3451d2404b79d24c3.jpg" alt="">
+                <img src="<?php echo get_post_meta($about_details->ID, 'about_image1', true) ?>" alt="">
             </div>
         </div>
         <div class="a_sec_btm">

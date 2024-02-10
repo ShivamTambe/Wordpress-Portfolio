@@ -38,7 +38,7 @@ function register_top_post_type()
             'has_archive'        => true,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'supports'           => array('title') // Customize the supports as needed
+            'supports'           => array('title','thumbnail') // Customize the supports as needed
 
         ]
     );
@@ -160,3 +160,6 @@ function save_custom_top_post_meta_data($post_id, $post, $update)
 }
 
 add_action('save_post', 'save_custom_top_post_meta_data', 10, 3);
+
+
+

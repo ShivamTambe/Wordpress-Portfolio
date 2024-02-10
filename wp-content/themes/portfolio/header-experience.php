@@ -5,7 +5,7 @@
     );
     $top_posts = get_posts($args); 
     if ($top_posts) {
-        $post = $top_posts[0];
+        $post = $top_posts[1];
         setup_postdata($post);
         
         ?>

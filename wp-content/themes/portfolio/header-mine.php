@@ -8,10 +8,15 @@
             );
             $top_posts = get_posts($args);
             if ($top_posts) {
-                $post = $top_posts[2];
+                $post = $top_posts[3];
                 setup_postdata($post);
+                $your_name = get_theme_mod('your_name_setting', '');
+                if($your_name== ''){
+                    $your_name = esc_html(get_post_meta($post->ID, 'your_name', true));
+                }
+                echo 'Value from Customizer: ' . esc_html($your_name);
             ?>
-                <h1>I'm <?php echo esc_html(get_post_meta($post->ID, 'your_name', true)); ?>, and <?php echo esc_html(get_post_meta($post->ID, 'second_text', true)); ?><br></br>
+                <h1><span id="your_name"><?php echo $your_name ?></span> <span id="second_text">and <?php echo esc_html(get_post_meta($post->ID, 'second_text', true)); ?></span><br></br>
                     <span class="underline-heading"><?php echo esc_html(get_post_meta($post->ID, 'underline_text', true)); ?></span>
                     &nbsp;<?php echo esc_html(get_post_meta($post->ID, 'end_text', true)); ?>
                 </h1>
