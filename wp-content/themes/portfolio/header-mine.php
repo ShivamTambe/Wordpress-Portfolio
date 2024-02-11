@@ -11,16 +11,33 @@
                 $post = $top_posts[3];
                 setup_postdata($post);
                 $your_name = get_theme_mod('your_name_setting', '');
+                $second_text = get_theme_mod('second_text_setting', '');
+                $underline_text = get_theme_mod('underline_text_setting', '');
+                $end_text = get_theme_mod('end_text_setting', '');
+                $my_dis = get_theme_mod('my_dis_setting', '');
+
                 if($your_name== ''){
                     $your_name = esc_html(get_post_meta($post->ID, 'your_name', true));
                 }
+                if($second_text == ''){
+                    $second_text = esc_html(get_post_meta($post->ID, 'second_text', true)); 
+                }
+                if($underline_text == ''){
+                    $underline_text = esc_html(get_post_meta($post->ID, 'underline_text', true));
+                }
+                if($end_text == ''){
+                    $end_text = esc_html(get_post_meta($post->ID, 'end_text', true));
+                }
+                if($my_dis == ''){
+                    $my_dis = esc_html(get_post_meta($post->ID, 'my_dis', true)); 
+                }
                 echo 'Value from Customizer: ' . esc_html($your_name);
             ?>
-                <h1><span id="your_name"><?php echo $your_name ?></span> <span id="second_text">and <?php echo esc_html(get_post_meta($post->ID, 'second_text', true)); ?></span><br></br>
-                    <span class="underline-heading"><?php echo esc_html(get_post_meta($post->ID, 'underline_text', true)); ?></span>
-                    &nbsp;<?php echo esc_html(get_post_meta($post->ID, 'end_text', true)); ?>
+                <h1><span id="your_name"><?php echo $your_name ?></span> <span id="second_text"><?php echo $second_text ?></span><br></br>
+                    <span class="underline-heading"><?php echo $underline_text ?></span>
+                    &nbsp;<?php echo $end_text ?>
                 </h1>
-                <p class="paragraph-large"><?php echo esc_html(get_post_meta($post->ID, 'my_dis', true)); ?></p>
+                <p class="paragraph-large"><?php echo $my_dis ?></p>
             <?php } else {  ?>
                 <h1>I'm Default, and I Default<br></br>
                     <span class="underline-heading">user interfaces</span>
