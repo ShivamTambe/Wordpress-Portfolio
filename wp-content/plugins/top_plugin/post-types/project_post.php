@@ -92,7 +92,8 @@ function custom_project_post_meta_boxes()
         'side',
         'default'
     );
-    require_once __DIR__ . '/Project_extras/extra_meta_boxes.php';
+    
+    // require_once __DIR__ . '/Project_extras/extra_meta_boxes.php';
 }
 function display_background_image_meta_box($post)
 {
@@ -135,7 +136,7 @@ function display_website_url_meta_box($post)
     <input type="text" name="website_url" value="<?php echo esc_attr($website_url); ?>" />
 <?php
 }
-require_once __DIR__ . '/Project_extras/display_meta.php';
+// require_once __DIR__ . '/Project_extras/display_meta.php';
 
 add_action('add_meta_boxes', 'custom_project_post_meta_boxes');
 
@@ -146,7 +147,8 @@ function save_project_post_meta_data($post_id, $post, $update)
         return;
     }
     if ($post->post_type == 'project') {
-        $fields = array('client_name', 'work', 'background_image');
+        $fields = array('client_name', 'work', 'background_image','deliverables','website_url');
+        error_log(count($fields). ' :Size');
         foreach ($fields as $field){
             error_log("first: " . $field);
             if ($field == 'background_image') {

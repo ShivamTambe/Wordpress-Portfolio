@@ -41,9 +41,10 @@ the_post();
         <div class="about_pro">
             <div class="a_p_title">About the project</div>
             <div class="a_p_dis">Lorem ipsum dolor sit amet, consectetur adipiscing elit lobortis arcu enim urna adipiscing praesent velit viverra sit semper lorem eu cursus vel hendrerit elementum morbi etiam nibh justo, lorem aliquet donec sed sit mi dignissim at ante.</div>
-            <?php $about_image = get_post_meta($post->ID, 'about_image', true);
-                if($about_image){ ?>
-                    <div class="a_p_img"><img src="echo $image" alt=""></div>
+            <!-- get_post_meta($post->ID, 'about_image', true) -->
+            <?php $about_image = get_the_post_thumbnail($post->ID);
+                if($about_image!=''){ ?>
+                    <div class="a_p_img"><?php echo $about_image?></div>
                 <?php }else{ ?>
                     <div class="a_p_img"><img src="https://assets-global.website-files.com/60e640d00fdb1e48916fae6c/60e65799dced1943d9c6cfdf_graphic-design-about-the-project-portfolio-x-webflow-template.jpg" alt=""></div>
                 <?php } ?>

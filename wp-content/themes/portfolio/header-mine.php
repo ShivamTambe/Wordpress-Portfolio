@@ -15,7 +15,6 @@
                 $underline_text = get_theme_mod('underline_text_setting', '');
                 $end_text = get_theme_mod('end_text_setting', '');
                 $my_dis = get_theme_mod('my_dis_setting', '');
-
                 if($your_name== ''){
                     $your_name = esc_html(get_post_meta($post->ID, 'your_name', true));
                 }

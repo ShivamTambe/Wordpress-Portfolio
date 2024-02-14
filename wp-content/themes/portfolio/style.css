@@ -536,6 +536,25 @@ body {
     margin: 30px 0;
     margin-bottom: 100px;
 }
+#projects-container{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    margin: 30px 0;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 100px;
+    grid-column-gap: 10px;
+    grid-row-gap: 30px; 
+}
+.pro_wid{
+    padding-top: 0;
+}
+.port_image img{
+    width: 100%;
+}
+.port_categories a{
+    text-decoration: none;
+}
 .category{
     margin-left: 8px;
     margin-right: 8px;
@@ -652,6 +671,7 @@ body {
 }
 .a_p_img img{
     width: 100%;
+    height: auto;
 }
 .a_p_title{
     margin-top: 0;
@@ -833,4 +853,23 @@ body {
 }
 .footer_tabs{
     list-style: none;
+}
+
+.category-link{
+    border: 1px solid black;
+    padding: 14px 16px;
+    margin: 0 10px;
+}
+.category-link:hover{
+    background-color: black;
+    color: white;
+}
+.foot_email button{
+    border: 1px solid black;
+    padding: 16px 14px;
+}
+.foot_email button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
