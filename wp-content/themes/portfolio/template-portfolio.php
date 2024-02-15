@@ -38,6 +38,8 @@ $projects = get_posts($args);
     jQuery(document).ready(function($) {
         $('body').on('click', '.category-link', function(e) {
             e.preventDefault();
+            $('.category-link').not(this).removeClass('selected-category');
+            $(this).addClass('selected-category');
             var category = $(this).data('category');
             $.ajax({
                 type: 'POST',
