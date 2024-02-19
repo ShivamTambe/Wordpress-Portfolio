@@ -165,8 +165,18 @@ body {
 
 .card-go {
     text-decoration: underline;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
-
+.card-go a{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.arrow img{
+    width: 20px;
+}
 .Pro-cards-right {
     background-color: pink;
     height: 100%;
@@ -179,7 +189,7 @@ body {
 .Pro-cards-right img {
     height: 100%;
     width: 100%;
-    max-width: 632px;
+    /* max-width: 632px; */
 }
 
 @keyframes sliding {
@@ -501,12 +511,13 @@ body {
     font-size: 48px;
     font-weight: 500;
     line-height: 64px;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 }
 .contact_title2{
     display: flex;
     font-size: 48px;
     font-weight: 500;
+    margin-bottom: 16px;
 }
 .underline{
     text-decoration: underline;
@@ -572,6 +583,10 @@ body {
     background-color: #000;
     color: white;
     cursor: pointer;
+}
+.active{
+    background-color: #000;
+    color: white;
 }
 .port_projects{
     display: grid;

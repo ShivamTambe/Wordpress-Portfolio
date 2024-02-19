@@ -36,6 +36,23 @@ require_once __DIR__ . '/customizer_setting/footer_copyright/copyright.php';
 
 require_once __DIR__ . '/customizer_setting/footer_pages/footer_page_title.php';
 
+require_once __DIR__ . '/widgets/custom-portfolio_widget.php';
+
+
+
+function theme_widgets_init() {
+    register_sidebar(array(
+        'name'          => __('Main Sidebar', 'your-theme-text-domain'),
+        'id'            => 'main-sidebar',
+        'description'   => __('Add widgets here to appear in the main sidebar.', 'your-theme-text-domain'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));
+}
+
+add_action('widgets_init', 'theme_widgets_init');
 
 // AJAX handler
 function load_projects_ajax_handler() {

@@ -24,8 +24,10 @@
           <p class='card-dis'>
             <?php echo get_the_excerpt($project->ID); ?>
           <div class='card-go'>
-            <span><a href="<?php the_permalink($project->ID)?>">View Project</a></span>
-            <span> Arrow</span>
+            <a href="<?php the_permalink($project->ID)?>">
+              <div>View Project</div>
+              <div class="arrow"> <img src="https://static.thenounproject.com/png/936147-200.png" alt="arrow"></div>
+            </a>
           </div>
         </div>
         <div class="Pro-cards-right">
