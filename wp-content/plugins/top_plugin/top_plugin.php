@@ -18,6 +18,13 @@
  */
 
 
+// function enqueue_portfolio_scripts()
+// {
+//     wp_enqueue_script('portfolio-script', get_template_directory_uri() . '', array('jquery'), null, true);
+// }
+
+// add_action('wp_enqueue_scripts', 'enqueue_portfolio_scripts');
+
 require_once __DIR__ . '/post-types/top_post.php';
 require_once __DIR__ . '/post-types/project_post.php';
 require_once __DIR__ . '/post-types/experience.php';
@@ -25,6 +32,8 @@ require_once __DIR__ . '/post-types/core_value.php';
 require_once __DIR__ . '/post-types/about_me.php';
 require_once __DIR__ . '/taxonomy/project_category.php';
 require_once __DIR__ . '/taxonomy/project_tag.php';
+
+// require_once __DIR__ . '/widgets/portfolio_widget.php';
 
 function mine_activation()
 {
